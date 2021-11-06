@@ -4,13 +4,13 @@
     <title>An Interpretable Method of Learning Stochastic Game Dynamics</title>
     <meta charset="utf-8" />
     <meta name="author" content="Advisor : Kostas Pelechrinis" />
-    <script src="Conference_Presentation_files/header-attrs/header-attrs.js"></script>
-    <link href="Conference_Presentation_files/remark-css/default.css" rel="stylesheet" />
-    <link href="Conference_Presentation_files/remark-css/default-fonts.css" rel="stylesheet" />
-    <script src="Conference_Presentation_files/htmlwidgets/htmlwidgets.js"></script>
-    <script src="Conference_Presentation_files/viz/viz.js"></script>
-    <link href="Conference_Presentation_files/DiagrammeR-styles/styles.css" rel="stylesheet" />
-    <script src="Conference_Presentation_files/grViz-binding/grViz.js"></script>
+    <script src="Soc_Pres_Files/header-attrs/header-attrs.js"></script>
+    <link href="Soc_Pres_Files/remark-css/default.css" rel="stylesheet" />
+    <link href="Soc_Pres_Files/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="Soc_Pres_Files/htmlwidgets/htmlwidgets.js"></script>
+    <script src="Soc_Pres_Files/viz/viz.js"></script>
+    <link href="Soc_Pres_Files/DiagrammeR-styles/styles.css" rel="stylesheet" />
+    <script src="Soc_Pres_Files/grViz-binding/grViz.js"></script>
     <link rel="stylesheet" href="my.css" type="text/css" />
   </head>
   <body>
@@ -229,8 +229,8 @@ This just becomes simple linear regression!
 &lt;!-- Nick  --&gt;
 ## Learning Potential Functions from Trajectories
 
-<div id="htmlwidget-46adc474f7e20d12572d" style="width:100%;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-46adc474f7e20d12572d">{"x":{"diagram":"digraph {\n\ngraph [layout = dot, rankdir = TB]\n\n# define the global styles of the nodes. We can override these in box if we wish\nnode [shape = rectangle, style = filled, fillcolor = Linen]\n\nStatBomb [label = \"StatBombR\", shape = folder, fillcolor = Beige]\ndata1 [label = \"Teams Offensive \n Trajectories\", shape = folder, fillcolor = Beige]\ndata2 [label = \"Teams Defensive \n Trajectories\", shape = folder, fillcolor = Beige]\nfit_function [label =  \"Fit Potential \n Function Model\"]\noff_coef [label = \"Teams Offensive \n Coefficients\", shape = folder, fillcolor = Beige]\ndef_coef [label = \"Teams Defensive \n Coefficients\", shape = folder, fillcolor = Beige]\n\n# edge definitions with the node IDs\nStatBomb -> {data1 data2}  -> fit_function -> {off_coef, def_coef}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-454069952e3b7d245ee8" style="width:100%;height:360px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-454069952e3b7d245ee8">{"x":{"diagram":"digraph {\n\ngraph [layout = dot, rankdir = TB]\n\n# define the global styles of the nodes. We can override these in box if we wish\nnode [shape = rectangle, style = filled, fillcolor = Linen]\n\nStatBomb [label = \"StatBombR\", shape = folder, fillcolor = Beige]\ndata1 [label = \"Teams Offensive \n Trajectories\", shape = folder, fillcolor = Beige]\ndata2 [label = \"Teams Defensive \n Trajectories\", shape = folder, fillcolor = Beige]\nfit_function [label =  \"Fit Potential \n Function Model\"]\noff_coef [label = \"Teams Offensive \n Coefficients\", shape = folder, fillcolor = Beige]\ndef_coef [label = \"Teams Defensive \n Coefficients\", shape = folder, fillcolor = Beige]\n\n# edge definitions with the node IDs\nStatBomb -> {data1 data2}  -> fit_function -> {off_coef, def_coef}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 
@@ -240,8 +240,8 @@ This just becomes simple linear regression!
 
 - Overlay the potential coefficients (additive) and simulating
 
-<div id="htmlwidget-b243bf0a3e971f80c9b8" style="width:100%;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b243bf0a3e971f80c9b8">{"x":{"diagram":"digraph {\n\ngraph [layout = dot, rankdir = LR]\n\n# define the global styles of the nodes. We can override these in box if we wish\nnode [shape = rectangle, style = filled, fillcolor = Linen]\n\nStatBomb [label = \"StatBombR match \n data\", shape = folder, fillcolor = Beige]\nOverlayCoef [label =  \"Overlay \n Coefficients\"]\nSimGame [label =  \"Simulate Game \n Model\"]\nGame_Avg_Pred [label =  \"Averaged Score \n Prediction\"]\n\n\noff_coef [label = \"Teams Offensive \n Coefficients\", shape = folder, fillcolor = Beige]\ndef_coef [label = \"Teams Defensive \n Coefficient\", shape = folder, fillcolor = Beige]\n\n# edge definitions with the node IDs\n{off_coef, def_coef,StatBomb }  -> OverlayCoef -> SimGame -> SimGame -> Game_Avg_Pred\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-69b964bee6d989b2f25e" style="width:100%;height:360px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-69b964bee6d989b2f25e">{"x":{"diagram":"digraph {\n\ngraph [layout = dot, rankdir = LR]\n\n# define the global styles of the nodes. We can override these in box if we wish\nnode [shape = rectangle, style = filled, fillcolor = Linen]\n\nStatBomb [label = \"StatBombR match \n data\", shape = folder, fillcolor = Beige]\nOverlayCoef [label =  \"Overlay \n Coefficients\"]\nSimGame [label =  \"Simulate Game \n Model\"]\nGame_Avg_Pred [label =  \"Averaged Score \n Prediction\"]\n\n\noff_coef [label = \"Teams Offensive \n Coefficients\", shape = folder, fillcolor = Beige]\ndef_coef [label = \"Teams Defensive \n Coefficient\", shape = folder, fillcolor = Beige]\n\n# edge definitions with the node IDs\n{off_coef, def_coef,StatBomb }  -> OverlayCoef -> SimGame -> SimGame -> Game_Avg_Pred\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 ---
@@ -368,7 +368,7 @@ $$ P(E) = \frac{1}{Z} \exp{[\frac{-E}{k_\beta T}]} $$
 
 - Potential functions as a viable way can summarize ball dynamics, as can be seen by the score predictions.
 
-
+- Making the model more expressive by using other basis functions
 
 - Lots of potential to improve the framework with more accurate sub-models
 
@@ -376,14 +376,13 @@ $$ P(E) = \frac{1}{Z} \exp{[\frac{-E}{k_\beta T}]} $$
   
   - Incorporate team formation and score differential into the potential function
   
+  
 - This framework can be used to determine other things such as:
 
   - Player-based potential functions to determine player impacts
   
-  - Real-Time Game Evaluation 
-  
-- This framework of using potential energy can be further tied to methods in nonequilibrium statistical mechanics
-  - Calculating the difference in "free energy" of different field/ball movement configurations as a way to quantify a value of movement.
+- This framework of using potential energy can be further tied to methods in statistical mechanics
+  - For example tying the idea of "free energy" quantify the value of certain trajectories. 
 
 
 
@@ -394,8 +393,8 @@ $$ P(E) = \frac{1}{Z} \exp{[\frac{-E}{k_\beta T}]} $$
 
 ## Appendix: Game Simulation
 
-<div id="htmlwidget-f63e06c4c999609653eb" style="width:100%;height:504px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f63e06c4c999609653eb">{"x":{"diagram":"digraph {\n\ngraph [layout = dot, rankdir = TB]\n\n# define the global styles of the nodes. We can override these in box if we wish\nnode [shape = rectangle, style = filled, fillcolor = Linen]\n\nStart_Game [label = \"Start Game\"]\nstartPoss [label =  \"50-50 Determine \n Possession\"]\nRandStep [label =  \"Random Walk Step \n Under Potential\"]\nBound [label =  \"Boundary Checks\"]\nGoalbounds [label =  \"Close to goal?\"]\nshot [label =  \"Decides to Shoot\"]\nnoshot [label =  \"Decides to NOT Shoot\"]\ngoal [label =  \"Decides to Shoot\"]\nscore [label =  \"SCORE\"]\nmiss [label =  \"Miss\"]\nupdate_score [label =  \"Update Score\"]\nupdate_time [label =  \"Update time\"]\n\n# edge definitions with the node IDs\nStart_Game -> startPoss -> RandStep -> Bound -> Goalbounds\nGoalbounds -> RandStep\nGoalbounds -> shot\nshot -> goal -> score -> update_score -> update_time -> startPoss\ngoal -> miss -> update_time -> RandStep\nGoalbounds -> noshot -> update_time -> RandStep\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-768b08217f9f7049b684" style="width:100%;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-768b08217f9f7049b684">{"x":{"diagram":"digraph {\n\ngraph [layout = dot, rankdir = TB]\n\n# define the global styles of the nodes. We can override these in box if we wish\nnode [shape = rectangle, style = filled, fillcolor = Linen]\n\nStart_Game [label = \"Start Game\"]\nstartPoss [label =  \"50-50 Determine \n Possession\"]\nRandStep [label =  \"Random Walk Step \n Under Potential\"]\nBound [label =  \"Boundary Checks\"]\nGoalbounds [label =  \"Close to goal?\"]\nshot [label =  \"Decides to Shoot\"]\nnoshot [label =  \"Decides to NOT Shoot\"]\ngoal [label =  \"Decides to Shoot\"]\nscore [label =  \"SCORE\"]\nmiss [label =  \"Miss\"]\nupdate_score [label =  \"Update Score\"]\nupdate_time [label =  \"Update time\"]\n\n# edge definitions with the node IDs\nStart_Game -> startPoss -> RandStep -> Bound -> Goalbounds\nGoalbounds -> RandStep\nGoalbounds -> shot\nshot -> goal -> score -> update_score -> update_time -> startPoss\ngoal -> miss -> update_time -> RandStep\nGoalbounds -> noshot -> update_time -> RandStep\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 
